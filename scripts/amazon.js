@@ -63,7 +63,6 @@ document.querySelectorAll('.js-add-to-cart-button')
       const quantitySelectorValue = Number(document
         .querySelector(`.js-quantity-selector-${productId}`)
         .value);
-      const addedToCartMessage = document.querySelector(`.js-added-to-cart-${productId}`);
       let matchingItem;
 
       cart.forEach(item => {
@@ -92,10 +91,11 @@ document.querySelectorAll('.js-add-to-cart-button')
 
       document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 
+      const addedToCartMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+
       setTimeout(() => {
         addedToCartMessage.classList.remove('added-to-cart-shown');
       }, 2000);
-
       addedToCartMessage.classList.add('added-to-cart-shown');
     });
   });
