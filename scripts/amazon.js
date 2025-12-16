@@ -16,7 +16,7 @@ const products = [
       stars: 4,
       count: 156
     },
-    pricecents: 2095
+    priceCents: 2095
   },
   {
     image: 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
@@ -52,7 +52,7 @@ products.forEach(product => {
           </div>
 
           <div class="product-price">
-            $${product.priceCents / 100}
+            $${(product.priceCents / 100).toFixed(2)}
           </div>
 
           <div class="product-quantity-container">
@@ -83,3 +83,5 @@ products.forEach(product => {
         </div>
   `;
 });
+
+document.querySelector('.js-products-grid').innerHTML = productsHTML;
