@@ -91,6 +91,15 @@ function updateCartQuantity() {
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
+function showAddedToCartMessage(productId) {
+  const addedToCartMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+
+  setTimeout(() => {
+    addedToCartMessage.classList.remove('added-to-cart-shown');
+  }, 2000);
+  addedToCartMessage.classList.add('added-to-cart-shown');
+}
+
 document.querySelectorAll('.js-add-to-cart-button')
   .forEach(button => {
     button.addEventListener('click', () => {
@@ -101,13 +110,7 @@ document.querySelectorAll('.js-add-to-cart-button')
 
       addToCart(productId, quantitySelectorValue);
       updateCartQuantity();
-      
-      const addedToCartMessage = document.querySelector(`.js-added-to-cart-${productId}`);
-
-      setTimeout(() => {
-        addedToCartMessage.classList.remove('added-to-cart-shown');
-      }, 2000);
-      addedToCartMessage.classList.add('added-to-cart-shown');
+      showAddedToCartMessage(productId);
     });
   });
 
