@@ -1,4 +1,4 @@
-import { cart, removeFromCart } from '/data/cart.js';
+import { cart, removeFromCart, updateCheckoutCartQuantity } from '/data/cart.js';
 import { products } from '/data/products.js';
 import { formatCurrency } from '/scripts/utils/money.js';
 
@@ -110,3 +110,5 @@ document.querySelectorAll('.js-delete-quantity-link')
       container.remove();
     });
   });
+
+updateCheckoutCartQuantity();
