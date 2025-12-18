@@ -1,4 +1,4 @@
-import { cart, addToCart, updateCartQuantity, countCartQuantity } from "/data/cart.js";
+import { cart, addToCart, countCartQuantity } from "/data/cart.js";
 import { products } from "/data/products.js";
 import { formatCurrency } from '/scripts/utils/money.js';
 
@@ -81,7 +81,7 @@ document.querySelectorAll('.js-add-to-cart-button')
         .value);
 
       addToCart(productId, quantitySelectorValue);
-      updateCartQuantity('.js-cart-quantity');
+      document.querySelector('.js-cart-quantity').innerHTML = countCartQuantity();
       showAddedToCartMessage(productId);
     });
   });
