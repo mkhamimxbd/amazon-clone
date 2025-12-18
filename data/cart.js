@@ -1,3 +1,5 @@
+import { renderPaymentSummary } from "/scripts/checkout/paymentSummary.js";
+
 export let cart = JSON.parse(localStorage.getItem('cart'));
 
 if (!cart) {
@@ -64,7 +66,10 @@ export function removeFromCart(productId) {
 
   saveToStorage();
 
-  updateCheckoutCartQuantity();
+  document.querySelector('.js-checkout-cart-quantity-count')
+    .innerHTML = `${countCartQuantity()} items`;
+
+  renderPaymentSummary();
 }
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
