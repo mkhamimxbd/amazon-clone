@@ -722,5 +722,4 @@ export const products = [
   } else {
     return new Product(productDetails);
   }
-
 });
