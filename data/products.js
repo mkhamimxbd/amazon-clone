@@ -719,7 +719,8 @@ export const products = [
 ].map(productDetails => {
   if (productDetails.type === 'clothing') {
     return new Clothing(productDetails);
+  } else {
+    return new Product(productDetails);
   }
 
-  return new Product(productDetails);
 });
