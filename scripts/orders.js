@@ -59,12 +59,10 @@ function renderOrderHTML() {
     <div class="product-quantity">
       Quantity: ${cartItem.quantity}
     </div>
-    <a href="/amazon.html" class="buy-again-link">
       <button class="buy-again-button button-primary">
         <img class="buy-again-icon" src="images/icons/buy-again.png">
         <span class="buy-again-message">Buy it again</span>
       </button>
-    </a>
   </div>
   `;
   });
