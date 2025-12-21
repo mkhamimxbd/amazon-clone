@@ -104,19 +104,10 @@ function renderOrderHTML() {
     .innerHTML = ordersHTML;
 }
 
+document.querySelector('.js-cart-quantity')
+ .innerHTML = cart.countCartQuantity();
+
 loadOrders();
 
-// function buyAgain(productId) {
-//   cart.addToCart(productId, 1);
-//   window.location.href = '/checkout.html'
-// }
-
-// document.querySelectorAll('.js-buy-again-button')
-//   .forEach(button => {
-//     button.addEventListener('click', (btn) => {
-//       const productId = btn.dataset.productId;
-//       buyAgain(productId);
-//     });
-//   });
 
 
